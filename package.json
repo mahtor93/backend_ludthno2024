@@ -1,0 +1,38 @@
+{
+    "name": "back-seguridad-eltt",
+    "version": "1.0.0",
+    "description": "backend de la capa de seguridad para app web destinada a encuentro ludico territorial de talcahuano",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon index.js",
+        "start": "node index.js",
+        "lint": "eslint",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mahtor93/EncuentroLudicoThno.git"
+    },
+    "keywords": [
+        "RPG"
+    ],
+    "author": "Mario H. Tornería R.",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/mahtor93/EncuentroLudicoThno/issues"
+    },
+    "homepage": "https://github.com/mahtor93/EncuentroLudicoThno#readme",
+    "devDependencies": {
+        "@faker-js/faker": "^8.0.2",
+        "eslint": "^8.48.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-prettier": "^5.0.0",
+        "nodemon": "^3.0.1",
+        "prettier": "^3.0.3"
+    },
+    "dependencies": {
+        "@hapi/boom": "^10.0.1",
+        "express": "^4.18.2",
+        "joi": "^17.10.2"
+    }
+}
