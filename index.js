@@ -1,10 +1,15 @@
+'use strict';
 const express = require('express');
+require('dotenv').config()
 const routerApi = require('./routes');
 const { logErrors, errorHandler, boomErrorHandler} = require('./middlewares/error.handler.js')
-const { validatorHandler } = require('./middlewares/validator.handler.js')
 const app = express();
-const port = 3333;
+const cors = require('cors')
+const port = process.env.PORT;
 
+const { WHITELIST = '' } = process.env;
+const corsOptions = { origin: WHITELIST.split(',')}
+app.use(cors(corsOptions))
 
 app.use(express.json());
 
@@ -19,7 +24,7 @@ routerApi(app)
 app.use(boomErrorHandler);
 app.use(logErrors);
 app.use(errorHandler);
-app.use(validatorHandler);
+
 
 
 app.listen(port, () => {

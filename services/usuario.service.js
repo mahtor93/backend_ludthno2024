@@ -1,16 +1,11 @@
 const { faker } = require('@faker-js/faker');
 const boom = require('@hapi/boom');
-
 class userService{
-
     constructor(){
         //cada vez que generemos una instancia del servicio se correrán estas funciones
         this.users = [];
         this.generate();
     }
-
-
-
     //Esto se borra posteriormente, también la importación de faker
     generate(){
         const limit = 100;
@@ -50,9 +45,9 @@ class userService{
     }
 
     async update(id,cambios){
-        const index = this.users.findIndex(item=>item.id ===id);
-        if(index === -1){
-            throw boom.notFound('Usuario No encontrado');
+        const index = this.users.findIndex(item=>item.id ==id);
+        if(index == -1){
+            throw boom.notFound('Usuario No encontrado :(');
         }
         const persist = this.users[index];
         this.users[index] = { ...persist, ...cambios };
